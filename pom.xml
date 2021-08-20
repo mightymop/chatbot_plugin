@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>plugins</artifactId>
+        <groupId>org.igniterealtime.openfire</groupId>
+        <version>4.6.0</version>
+    </parent>
+    <groupId>org.igniterealtime.openfire.plugins</groupId>
+    <artifactId>chatbot</artifactId>
+    <name>CHATBOT Plugin</name>
+    <description>Openfire chatbot plugin</description>
+    <version>1.0.0</version>
+
+    <distributionManagement>
+        <!-- Repository in which we deploy this project, when desired. -->
+        <repository>
+            <id>igniterealtime</id>
+            <name>Ignite Realtime Repository</name>
+            <url>https://www.igniterealtime.org/archiva/repository/maven/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <!-- Where we obtain dependencies. -->
+        <repository>
+            <id>igniterealtime</id>
+            <name>Ignite Realtime Repository</name>
+            <url>https://igniterealtime.org/archiva/repository/maven/</url>
+        </repository>
+        <!-- For the weird version of libidn that is pulled in transitively -->
+        <repository>
+            <id>springplugins</id>
+            <name>Spring Plugins Repository</name>
+            <url>http://repo.spring.io/plugins-release/</url>
+        </repository>
+        <repository>
+         <id>jcenter</id>
+         <name>JCenter Repository</name>
+         <url>https://jcenter.bintray.com/</url>
+       </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <!-- Typically used to retrieve Maven plugins used by this project from. This
+             apparently is also used to obtain the dependencies _used by_ plugins
+             (eg: openfire-plugin-assembly-descriptor) -->
+        <pluginRepository>
+            <id>igniterealtime</id>
+            <name>Ignite Realtime Repository</name>
+            <url>https://igniterealtime.org/archiva/repository/maven/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <sourceDirectory>src/java</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+             <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-jspc-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+            <dependency>
+                    <!--groupId>com.google</groupId>
+                    <artifactId>Ab</artifactId>
+                    <version>0.0.4.3</version>
+                    <scope>scope</scope-->
+                    <!--systemPath>${basedir}/lib/Ab.jar</systemPath-->
+                    <!-- https://mvnrepository.com/artifact/org.goldrenard/ab -->
+
+                        <groupId>org.goldrenard</groupId>
+                        <artifactId>ab</artifactId>
+                        <version>1.0.7</version>
+
+            </dependency>
+            <dependency>
+                    <groupId>org.igniterealtime.smack</groupId>
+                    <artifactId>smack-java7</artifactId>
+                    <version>4.3.4</version>
+            </dependency>
+            <dependency>
+                    <groupId>org.igniterealtime.smack</groupId>
+                    <artifactId>smack-tcp</artifactId>
+                    <version>4.3.4</version>
+            </dependency>
+            <dependency>
+                    <groupId>org.igniterealtime.smack</groupId>
+                    <artifactId>smack-im</artifactId>
+                    <version>4.3.4</version>
+            </dependency>
+            <dependency>
+                    <groupId>org.igniterealtime.smack</groupId>
+                    <artifactId>smack-extensions</artifactId>
+                    <version>4.3.4</version>
+            </dependency>
+             <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>4.8.0</version>
+            </dependency>
+   
+          <dependency>
+            <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180813</version>
+        </dependency>
+        <dependency>
+	      <groupId>org.apache.maven</groupId>
+	      <artifactId>maven-model</artifactId>
+	      <version>3.3.9</version>
+	    </dependency>
+	
+    </dependencies>
+</project>

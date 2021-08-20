@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin>
+    <class>de.mopsdom.openfire.plugins.chatbot.ChatbotPlugin</class>
+    <name>Chatbot</name>
+    <description>Openfire chatbot plugin</description>
+    <author>mightymop</author>
+    <version>${project.version}</version>
+    <date>14/11/2020</date>
+	<databaseKey>chatbot</databaseKey>
+    <databaseVersion>3</databaseVersion> 
+    <minServerVersion>4.5.0</minServerVersion>   
+    <minJavaVersion>1.8</minJavaVersion>
+    <adminconsole>
+        <tab id="tab-other" name="Sonstiges">
+            <sidebar id="tab-chatbot" name="${admin.sidebar.chatbot.name}" url="chatbot-config.jsp" description="${admin.item.chatbot.description}">
+                <item id="chatbot-config" name="${admin.sidebar.chatbot.settings.name}"
+                      url="chatbot-config.jsp"
+                      description="${admin.sidebar.chatbot.database.description}"/> 
+                <item id="chatbot-eventmsg" name="${admin.sidebar.chatbot.settings.name.eventmsg}"
+                      url="chatbot-eventmsg.jsp"
+                      description="${admin.sidebar.chatbot.database.description.eventmsg}"/> 
+                <item id="chatbot-rooms" name="${admin.sidebar.chatbot.settings.name.rooms}"
+                      url="chatbot-rooms.jsp"
+                      description="${admin.sidebar.chatbot.database.description.rooms}"/> 
+                <item id="chatbot-qa" name="${admin.sidebar.chatbot.settings.name.qa}"
+                      url="chatbot-qa.jsp"
+                      description="${admin.sidebar.chatbot.database.description.qa}"/> 
+            </sidebar>
+        </tab>
+    </adminconsole>
+</plugin>
