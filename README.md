@@ -8,3 +8,10 @@ files, the plugin by default stores the files that are being transferred in a te
 when Openfire is shut down. The content of this directory is purged when its total size is larger than the remaining
 disc space.
 
+# Build
+
+- Install maven if not allready done.
+- Change to plugin root directory.
+- Use "mvn package" command to build.
+- The result can be found in the target directory: 
+- Rename chatbot-openfire-plugin-assembly.jar to chatbot.jar and use/install it into Openfire.
